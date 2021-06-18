@@ -1,7 +1,7 @@
 #include <iostream>
 #include <chrono>
 #include <immintrin.h>
-#include "eigen/Eigen/Dense"
+#include "Eigen/Dense"
 #include "nonlinear_equation.h"
 
 

@@ -2,7 +2,7 @@
 #define __NONLINEAR_EQUATION_H__
 #include <iostream>
 #include <functional>
-#include "eigen/Eigen/Dense"
+#include "Eigen/Dense"
 
 template<typename T>
 T Bisection(std::function<T(T)> f, T a, T b, int n = 10000000, double epsilon = 0.0000001)

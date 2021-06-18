@@ -1,4 +1,4 @@
-﻿cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.5)
 
 project(NumericalAnalysis)
 
@@ -16,8 +16,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # 第三方库
 IF (WIN32)
         MESSAGE(STATUS "Now is windows")
-		include_directories(${PROJECT_BINARYs_DIR}/eigen)
-
+	
 ELSEIF (APPLE)
         MESSAGE(STATUS "Now is Apple systens.")
         
@@ -25,5 +24,9 @@ ELSEIF (UNIX)
         MESSAGE(STATUS "Now is UNIX-like OS's.")
 ENDIF ()
 
+set(Eigen3_DIR ${PROJECT_SOURCE_DIR}/eigen-3.3.9/cmake)
+find_package (Eigen3 3.3 REQUIRED NO_MODULE)
+
 add_executable(na main.cpp nonlinear_equation.h nonlinear_equation.cpp)
+target_link_libraries (na Eigen3::Eigen)
 
