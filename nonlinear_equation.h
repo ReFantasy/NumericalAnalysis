@@ -39,4 +39,6 @@ T Bisection(std::function<T(T)> f, T a, T b, int n = 10000000, double epsilon = 
 
 Eigen::VectorXf Jacobi(Eigen::MatrixXf A, Eigen::VectorXf b, double epsilon = 0.0000001);
 
+Eigen::VectorXf GaussSeide(Eigen::MatrixXf A, Eigen::VectorXf b, double epsilon = 0.0000001);
+
 #endif//__NONLINEAR_EQUATION_H__

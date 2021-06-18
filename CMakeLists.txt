@@ -24,9 +24,5 @@ ELSEIF (UNIX)
         MESSAGE(STATUS "Now is UNIX-like OS's.")
 ENDIF ()
 
-set(Eigen3_DIR ${PROJECT_SOURCE_DIR}/eigen-3.3.9/cmake)
-find_package (Eigen3 3.3 REQUIRED NO_MODULE)
-
 add_executable(na main.cpp nonlinear_equation.h nonlinear_equation.cpp)
-target_link_libraries (na Eigen3::Eigen)
 

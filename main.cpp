@@ -17,7 +17,7 @@ int main(int argc, char* argv[])
 	Eigen::VectorXf b(3);
 	b << 14, -5, 14;
 	
-
-	std::cout << Jacobi(A,b) << std::endl;
+	std::cout << Jacobi(A, b) << std::endl;
+	std::cout << GaussSeide(A,b) << std::endl;
 	return 0;
 }
