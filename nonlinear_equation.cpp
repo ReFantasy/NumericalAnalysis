@@ -30,8 +30,8 @@ Eigen::VectorXf Jacobi(Eigen::MatrixXf A, Eigen::VectorXf b, double epsilon)
 		x = tx;
 	}
 
-#ifdef DEBUG
+//#ifdef DEBUG
 	std::cout << "Jacobi Iterated: " << n << " times" << std::endl;
-#endif
+//#endif
 	return x;
 }
