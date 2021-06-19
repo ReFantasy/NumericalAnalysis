@@ -23,6 +23,5 @@ ELSEIF (UNIX)
         MESSAGE(STATUS "Now is UNIX-like OS's.")
 ENDIF ()
 
-add_executable(numerical main.cpp equation.h equation.cpp easylogging++.cc easylogging++.h
-               global.h global.cpp)
+add_executable(numerical main.cpp equation.h equation.cpp )
 

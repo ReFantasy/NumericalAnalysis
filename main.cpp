@@ -1,7 +1,7 @@
 #include <iostream>
 #include <chrono>
 #include <immintrin.h>
-#include "easylogging++.h"
+
 #include "equation.h"
 
 
@@ -31,7 +31,6 @@ private:
 
 };
 
-INITIALIZE_EASYLOGGINGPP
 int main(int argc, char* argv[])
 {
 

@@ -2,7 +2,6 @@
 #define __EQUATION_H__
 #include <iostream>
 #include <functional>
-#include "global.h"
 #include "Eigen/Dense"
 
 /*****************************************************************************************************
