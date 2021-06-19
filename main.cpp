@@ -1,9 +1,9 @@
 #include <iostream>
 #include <chrono>
 #include <immintrin.h>
-#include "Eigen/Dense"
-#include "nonlinear_equation.h"
-#include <chrono>
+#include "easylogging++.h"
+#include "equation.h"
+
 
 using namespace std;
 using namespace Eigen;
@@ -31,15 +31,21 @@ private:
 
 };
 
+INITIALIZE_EASYLOGGINGPP
 int main(int argc, char* argv[])
 {
+
 	Timer timer;
 
 	Eigen::MatrixXf A(3, 3);
-	A << 4, -2, -4, -2, 17, 10, -4, 10, 9;
+	A << 8, -3, 2, 4, 11, -1, 6, 3, 12;
 
 	Eigen::VectorXf b(3);
-	b << 10, 3, -7;
+	b << 20, 33, 36;
+
+	timer.Start();
+	Jacobi(A, b, 0.0000001);
+	timer.Stop();
 
 	timer.Start();
 	GaussSeide(A, b, 0.0000001);
@@ -47,7 +53,7 @@ int main(int argc, char* argv[])
 	std::cout << timer.Elapsed<std::chrono::microseconds>() << std::endl;
 
 	timer.Start();
-	SOR(A, b, 1.46, 0.0000001);
+	SOR(A, b, 0.9, 0.0000001);
 	timer.Stop();
 	std::cout << timer.Elapsed<std::chrono::microseconds>() << std::endl;
 	return 0;

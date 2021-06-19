@@ -1,4 +1,8 @@
-#include "nonlinear_equation.h"
+#include "equation.h"
+
+#ifdef LOGON
+#include "easylogging++.h"
+#endif
 
 Eigen::VectorXf Jacobi(Eigen::MatrixXf A, Eigen::VectorXf b, double epsilon)
 {
@@ -28,8 +32,8 @@ Eigen::VectorXf Jacobi(Eigen::MatrixXf A, Eigen::VectorXf b, double epsilon)
 
 		x = tx;
 	}
-#ifdef _DEBUG
-	std::cout << "Jacobi Iterated: " << n << " times" << std::endl;
+#ifdef LOGON
+	LOG(INFO)<< "Jacobi Iterated: " << n << " times" ;
 #endif
 	return x;
 }
@@ -63,8 +67,8 @@ Eigen::VectorXf GaussSeide(Eigen::MatrixXf A, Eigen::VectorXf b, double epsilon)
 
 		x = tx;
 	}
-#ifdef _DEBUG
-	std::cout << "GaussSeide Iterated: " << n << " times" << std::endl;
+#ifdef LOGON
+	LOG(INFO) << "GaussSeide Iterated: " << n << " times"; 
 #endif
 	return x;
 }
@@ -98,8 +102,8 @@ Eigen::VectorXf SOR(Eigen::MatrixXf A, Eigen::VectorXf b, double w, double epsil
 
 		x = tx;
 	}
-#ifdef _DEBUG
-	std::cout << "SOR Iterated: " << n << " times" << std::endl;
+#ifdef LOGON
+	LOG(INFO) << "SOR Iterated: " << n << " times";
 #endif
 	return x;
 }
