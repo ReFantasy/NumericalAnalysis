@@ -47,13 +47,16 @@ int main(int argc, char* argv[])
 	timer.Stop();
 
 	timer.Start();
-	GaussSeide(A, b, 0.0000001);
+	auto res = GaussSeide(A, b, 0.0000001);
 	timer.Stop();
-	std::cout << timer.Elapsed<std::chrono::microseconds>() << std::endl;
+	//std::cout << timer.Elapsed<std::chrono::microseconds>() << std::endl;
 
 	timer.Start();
 	SOR(A, b, 0.9, 0.0000001);
 	timer.Stop();
-	std::cout << timer.Elapsed<std::chrono::microseconds>() << std::endl;
+	//std::cout << timer.Elapsed<std::chrono::microseconds>() << std::endl;
+
+
+	std::cout << res << std::endl;
 	return 0;
 }
