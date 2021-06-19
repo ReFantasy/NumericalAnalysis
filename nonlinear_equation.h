@@ -5,7 +5,7 @@
 #include "Eigen/Dense"
 
 template<typename T>
-T Bisection(std::function<T(T)> f, T a, T b, int n = 10000000, double epsilon = 0.0000001)
+T Bisection(std::function<T(T)> f, T a, T b, int n = 10000000, double epsilon = 0.00001)
 {
 	if (f(a) * f(b) > 0) return T{};
 
@@ -37,8 +37,15 @@ T Bisection(std::function<T(T)> f, T a, T b, int n = 10000000, double epsilon = 
 }
 
 
-Eigen::VectorXf Jacobi(Eigen::MatrixXf A, Eigen::VectorXf b, double epsilon = 0.0000001);
+/*****************************************************************************************************
+ * 
+ *                             线性方程组的数值求解（迭代法）
+ * 
+ *****************************************************************************************************/
+Eigen::VectorXf Jacobi(Eigen::MatrixXf A, Eigen::VectorXf b, double epsilon = 0.00001);
 
-Eigen::VectorXf GaussSeide(Eigen::MatrixXf A, Eigen::VectorXf b, double epsilon = 0.0000001);
+Eigen::VectorXf GaussSeide(Eigen::MatrixXf A, Eigen::VectorXf b, double epsilon = 0.00001);
+
+Eigen::VectorXf SOR(Eigen::MatrixXf A, Eigen::VectorXf b, double w = 1.4, double epsilon = 0.00001);
 
 #endif//__NONLINEAR_EQUATION_H__
