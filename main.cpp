@@ -31,32 +31,17 @@ private:
 
 };
 
+double f(double x)
+{
+	return std::pow(10 - 4 * x * x, 1.0 / 3);
+}
+
 int main(int argc, char* argv[])
 {
 
 	Timer timer;
 
-	Eigen::MatrixXf A(3, 3);
-	A << 8, -3, 2, 4, 11, -1, 6, 3, 12;
-
-	Eigen::VectorXf b(3);
-	b << 20, 33, 36;
-
-	timer.Start();
-	Jacobi(A, b, 0.0000001);
-	timer.Stop();
-
-	timer.Start();
-	auto res = GaussSeide(A, b, 0.0000001);
-	timer.Stop();
-	//std::cout << timer.Elapsed<std::chrono::microseconds>() << std::endl;
-
-	timer.Start();
-	SOR(A, b, 0.9, 0.0000001);
-	timer.Stop();
-	//std::cout << timer.Elapsed<std::chrono::microseconds>() << std::endl;
-
-
-	std::cout << res << std::endl;
+	
+	
 	return 0;
 }
